@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primary Class Weekly Schedule</title>
+
+    <style>
+        /* CSS Styling for the Timetable */
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif; /* Friendly font for primary school */
+            background-color: #fce4ec; /* Light pink background */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #ff69b4; /* Hot pink */
+            margin-bottom: 20px;
+        }
+
+        /* 1. Grid Container */
+        .schedule-grid {
+            display: grid;
+            /* Define 6 columns: 1 for Time (fixed width) and 5 for Days (equal width) */
+            grid-template-columns: 100px repeat(5, 1fr);
+            /* Define 10 rows: 1 for the Header (Days) and 9 for the Time Slots */
+            grid-template-rows: auto repeat(9, 70px);
+            border: 2px solid #ffb6c1; /* Light pink border */
+            border-radius: 10px;
+            overflow: hidden; /* To keep inner elements rounded */
+            box-shadow: 0 8px 15px rgba(255, 105, 180, 0.2);
+            width: 90%;
+            max-width: 1000px;
+        }
+
+        /* 2. Grid Items (General Styling) */
+        .grid-cell {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 5px 10px;
+            font-size: 1.1em;
+            border-right: 1px solid #ffe4e1; /* Very light pink border */
+            border-bottom: 1px solid #ffe4e1;
+            box-sizing: border-box;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        /* 3. Header Row Styling (Days) */
+        .day-header, .time-label {
+            font-weight: bold;
+            color: #fff;
+            background-color: #ffb6c1; /* Header color matching the image style (light pink) */
+            text-transform: uppercase;
+            font-size: 1.2em;
+        }
+
+        /* Styling for the empty top-left cell */
+        .time-label.corner {
+            background-color: #ffb6c1;
+            border-right: 2px solid #ffb6c1;
+        }
+
+        /* 4. Time Column Styling */
+        .time-label {
+            background-color: #add8e6; /* Light blue color for the time column (matching the image) */
+            color: #333;
+            border-right: 2px solid #ffb6c1; /* Stronger separation for the time column */
+            font-size: 1.1em;
+        }
+
+        /* 5. Content Cells (Alternating Colors for readability, mimicking the image) */
+        /* Pink cells (e.g., 09:00, 11:00, 13:00, etc.) */
+        .schedule-grid :nth-child(even of .grid-cell:not(.time-label):not(.day-header)) {
+            background-color: #fddde6; /* Lightest pink */
+        }
+
+        /* Yellow cells (e.g., 08:00, 10:00, 12:00, etc.) */
+        .schedule-grid :nth-child(odd of .grid-cell:not(.time-label):not(.day-header)) {
+            background-color: #fffacd; /* Lightest yellow */
+        }
+        
+        /* Note Section */
+        .note-container {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #add8e6; /* Light blue color */
+            border-radius: 8px;
+            width: 90%;
+            max-width: 1000px;
+            color: #333;
+            font-weight: 500;
+        }
+        .note-container strong {
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Weekly schedule</h1>
+
+    <div class="schedule-grid">
+        <div class="grid-cell day-header corner"></div>
+        <div class="grid-cell day-header">Monday</div>
+        <div class="grid-cell day-header">Tuesday</div>
+        <div class="grid-cell day-header">Wednesday</div>
+        <div class="grid-cell day-header">Thursday</div>
+        <div class="grid-cell day-header">Friday</div>
+
+        <div class="grid-cell time-label">08:00</div>
+        <div class="grid-cell">Maths</div>
+        <div class="grid-cell">English</div>
+        <div class="grid-cell">EVS</div>
+        <div class="grid-cell">Reading</div>
+        <div class="grid-cell">Story Time</div>
+
+        <div class="grid-cell time-label">09:00</div>
+        <div class="grid-cell">Drawing</div>
+        <div class="grid-cell">Science</div>
+        <div class="grid-cell">Hindi</div>
+        <div class="grid-cell">Art</div>
+        <div class="grid-cell">Maths</div>
+
+        <div class="grid-cell time-label">10:00</div>
+        <div class="grid-cell">**BREAK**</div>
+        <div class="grid-cell">**BREAK**</div>
+        <div class="grid-cell">**BREAK**</div>
+        <div class="grid-cell">**BREAK**</div>
+        <div class="grid-cell">**BREAK**</div>
+
+        <div class="grid-cell time-label">11:00</div>
+        <div class="grid-cell">English</div>
+        <div class="grid-cell">Maths</div>
+        <div class="grid-cell">PT</div>
+        <div class="grid-cell">EVS</div>
+        <div class="grid-cell">Phonics</div>
+
+        <div class="grid-cell time-label">12:00</div>
+        <div class="grid-cell">Music</div>
+        <div class="grid-cell">Library</div>
+        <div class="grid-cell">Maths</div>
+        <div class="grid-cell">Hindi</div>
+        <div class="grid-cell">PT</div>
+
+        <div class="grid-cell time-label">13:00</div>
+        <div class="grid-cell">**LUNCH**</div>
+        <div class="grid-cell">**LUNCH**</div>
+        <div class="grid-cell">**LUNCH**</div>
+        <div class="grid-cell">**LUNCH**</div>
+        <div class="grid-cell">**LUNCH**</div>
+
+        <div class="grid-cell time-label">14:00</div>
+        <div class="grid-cell">EVS</div>
+        <div class="grid-cell">PT</div>
+        <div class="grid-cell">Science</div>
+        <div class="grid-cell">Maths Practice</div>
+        <div class="grid-cell">Exams Prep</div>
+
+        <div class="grid-cell time-label">15:00</div>
+        <div class="grid-cell">Hindi</div>
+        <div class="grid-cell">Reading</div>
+        <div class="grid-cell">English Grammar</div>
+        <div class="grid-cell">Drawing</div>
+        <div class="grid-cell">EVS</div>
+
+        <div class="grid-cell time-label">16:00</div>
+        <div class="grid-cell">Free Play</div>
+        <div class="grid-cell">Story Time</div>
+        <div class="grid-cell">Games</div>
+        <div class="grid-cell">Review</div>
+        <div class="grid-cell">Assembly</div>
+    </div>
+
+    <div class="note-container">
+        <strong>Note:</strong> Timings for break and lunch are fixed at 10:00 and 13:00 respectively. Friday afternoon is reserved for whole-class activities.
+    </div>
+
+</body>
+</html>
