@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masai Calculator</title>
+
+    <style>
+        /* General Styles and Flexbox for Centering (Box Model) */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f0f0f0;
+            display: flex; /* Flexbox to center the content */
+            flex-direction: column;
+            align-items: center;
+            padding-top: 50px;
+            min-height: 100vh;
+        }
+
+        h1 {
+            color: #008080; /* Teal/Turquoise color */
+            margin-bottom: 30px;
+        }
+
+        /* Calculator Shell (Box Model) */
+        .calculator {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            width: 300px; /* Fixed width */
+        }
+
+        /* Display Screen (Box Model) */
+        .display {
+            background-color: #f5f5f5;
+            height: 60px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            padding: 10px;
+            text-align: right;
+            font-size: 2em;
+            color: #333;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Grid Container for Buttons */
+        .buttons {
+            display: grid; /* CSS Grid for button arrangement */
+            /* 4 columns: 3 equal width (for numbers) and 1 slightly wider (for operators) */
+            grid-template-columns: repeat(3, 1fr) 1.2fr;
+            gap: 10px; /* Gap between buttons */
+        }
+
+        /* Button General Styling */
+        button {
+            height: 60px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            color: #333;
+            background-color: #e0e0e0;
+        }
+
+        /* Combinator: Styling all buttons inside the .buttons container */
+        .buttons > button:hover {
+            opacity: 0.9;
+        }
+
+        /* Specific Button Styling (CSS Selectors) */
+
+        /* Operator Buttons (last column) */
+        /* Pseudo-class selector: Selects all children that are the 4th, 8th, 12th, and 16th elements */
+        .buttons > button:nth-child(4n) {
+            background-color: black;
+            color: white;
+            font-size: 1.5em;
+        }
+
+        /* Clear Button (Red color) */
+        .clear {
+            background-color: #ff4136; /* Red */
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Special Grid Placement for '0' and '=' */
+
+        /* Item 0: Spans 2 columns */
+        .zero {
+            grid-column: span 2; /* Spans across the first two columns in its row */
+        }
+
+        /* Item '=': Remains a single column, placed next to 0 */
+        .equals {
+            background-color: black; /* Making the equals button black for contrast */
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Masai Calculator</h1>
+
+    <div class="calculator">
+        <div class="display">0</div>
+
+        <div class="buttons">
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>+</button>
+
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button>-</button>
+
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button>x</button>
+
+            <button class="clear">C</button>
+            <button class="zero">0</button>
+            <button class="equals">=</button>
+            <button>/</button>
+        </div>
+    </div>
+
+</body>
+</html>
