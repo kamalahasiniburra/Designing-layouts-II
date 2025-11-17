@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masai School Founders Grid</title>
+
+    <style>
+        /* General Styles and Container Setup */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            background-color: #f8f8f8;
+            display: flex; /* Flexbox for overall centering */
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 1. Grid Container */
+        .grid-container {
+            display: grid;
+            /* Create 4 equal columns */
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px; /* Gap between cards (Box Model) */
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        /* 2. Individual Card Item (Box Model & Flexbox) */
+        .profile-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            
+            /* Flexbox to arrange content vertically */
+            display: flex;
+            flex-direction: column;
+            
+            /* Box Model: Padding for text content */
+            padding-bottom: 20px;
+        }
+
+        /* CSS Selector/Hover Effect */
+        .profile-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        /* 3. Image Container & Image Styling (Box Model) */
+        .profile-image-container {
+            height: 250px; /* Fixed height for image consistency */
+            overflow: hidden;
+            margin-bottom: 15px; /* Spacing between image and text */
+        }
+
+        /* Descendant Selector: Styling the Image */
+        .profile-image-container > img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures image covers the container without distortion */
+            display: block;
+        }
+
+        /* 4. Text Content Styling (Flexbox details) */
+        .profile-details {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 0 10px;
+        }
+
+        /* Name (Stronger styling) */
+        .profile-details h3 {
+            font-size: 1.1em;
+            color: #333;
+            margin: 0 0 5px 0;
+        }
+
+        /* Title/Designation */
+        .profile-details p {
+            font-size: 0.9em;
+            color: #777;
+            margin: 0 0 10px 0;
+        }
+        
+        /* 5. Logo Styling */
+        .company-logo {
+            width: 100px; /* Fixed width for logo image */
+            height: auto;
+            margin-top: 5px;
+        }
+
+        /* Attribute Selector Example (could be used for specific styling if needed) */
+        .profile-card[data-company="Paytm"] h3 {
+            color: #00b9f1;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="grid-container">
+
+        <div class="profile-card" data-company="Paytm">
+            <div class="profile-image-container">
+                <img src="https://cdn.masaischool.com/masai-website/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg" alt="Vijay Shekhar Sharma">
+            </div>
+            <div class="profile-details">
+                <h3>Vijay Shekhar Sharma</h3>
+                <p>Founder & CEO</p>
+                <img class="company-logo" src="https://cdn.masaischool.com/masai-website/paytm_rect_06df45a24f.svg" alt="Paytm Logo">
+            </div>
+        </div>
+
+        <div class="profile-card" data-company="CRED">
+            <div class="profile-image-container">
+                <img src="https://cdn.masaischool.com/masai-website/Rectangle_427_637d69bb57.png" alt="Kunal Shah">
+            </div>
+            <div class="profile-details">
+                <h3>Kunal Shah</h3>
+                <p>Founder</p>
+                <img class="company-logo" src="https://cdn.masaischool.com/masai-website/cred_0a47d7b4f8.png" alt="CRED Logo">
+            </div>
+        </div>
+
+        <div class="profile-card" data-company="Pine Labs">
+            <div class="profile-image-container">
+                <img src="https://cdn.masaischool.com/masai-website/amrish_rau_pine_labs_144e5e587c.jpg" alt="Amrish Rau">
+            </div>
+            <div class="profile-details">
+                <h3>Amrish Rau</h3>
+                <p>CEO</p>
+                <img class="company-logo" src="https://cdn.masaischool.com/masai-website/pine_labs_0aa2407434.png" alt="Pine Labs Logo">
+            </div>
+        </div>
+
+        <div class="profile-card" data-company="Instamojo">
+            <div class="profile-image-container">
+                <img src="https://cdn.masaischool.com/masai-website/Sampad_swain_Instamojo_f12bf6341e.jpg" alt="Sampad Swain">
+            </div>
+            <div class="profile-details">
+                <h3>Sampad Swain</h3>
+                <p>Co-Founder & CEO</p>
+                <img class="company-logo" src="https://cdn.masaischool.com/masai-website/instamojo_8763e704f7.png" alt="Instamojo Logo">
+            </div>
+        </div>
+
+        <div class="profile-card" data-company="ShareChat">
+            <div class="profile-image-container">
+                <img src="https://cdn.masaischool.com/masai-website/Ankush_Sachdeva_Sharechat_4e44dbbe6b.jpg" alt="Ankush Sachdeva">
+            </div>
+            <div class="profile-details">
+                <h3>Ankush Sachdeva</h3>
+                <p>Co-Founder & CEO</p>
+                <img class="company-logo" src="https://cdn.masaischool.com/masai-website/sharechat_rect_73d95cd4e1.svg" alt="ShareChat Logo">
+            </div>
+        </div>
+
+        <div class="profile-card" data-company="ShareChat">
+            <div class="profile-image-container">
+                <img src="https://cdn.masaischool.com/masai-website/bhanu_pratap_singh_sharechat_11fdd7b47a.jpg" alt="Bhanu Pratap Singh">
+            </div>
+            <div class="profile-details">
+                <h3>Bhanu Pratap Singh</h3>
+                <p>Co-Founder & CTO</p>
+                <img class="company-logo" src="https://cdn.masaischool.com/masai-website/sharechat_rect_73d95cd4e1.svg" alt="ShareChat Logo">
+            </div>
+        </div>
+
+        <div class="profile-card" data-company="ShareChat">
+            <div class="profile-image-container">
+                <img src="https://cdn.masaischool.com/masai-website/farid_ahsan_sharechat_1251f28141.png" alt="Farid Ahsan">
+            </div>
+            <div class="profile-details">
+                <h3>Farid Ahsan</h3>
+                <p>Co-Founder & COO</p>
+                <img class="company-logo" src="https://cdn.masaischool.com/masai-website/sharechat_rect_73d95cd4e1.svg" alt="ShareChat Logo">
+            </div>
+        </div>
+
+        <div class="profile-card" data-company="NOBROKER">
+            <div class="profile-image-container">
+                <img src="https://cdn.masaischool.com/masai-website/Amit_Kumar_Agarwal_Nobroker_a8a279ad91.jpg" alt="Amit Kumar Agarwal">
+            </div>
+            <div class="profile-details">
+                <h3>Amit Kumar Agarwal</h3>
+                <p>Founder & CEO</p>
+                <img class="company-logo" src="https://cdn.masaischool.com/masai-website/nobroker_rect_28c9778c30.svg" alt="NOBROKER Logo">
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
